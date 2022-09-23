@@ -49,11 +49,11 @@ export function feedView() {
   root.appendChild(containFeed);
 
   //caja de publicacion
-  const inputFeedState = document.createElement("textarea");
+  const inputFeedState = document.createElement("input");
   inputFeedState.setAttribute("class", "inputFeedState");
   inputFeedState.setAttribute("maxlength", "200");
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
-  inputFeedState.setAttribute("type", "textarea");
+  inputFeedState.setAttribute("type", "text");
   
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("id", "valuein" );
@@ -79,13 +79,13 @@ export function feedView() {
   }
 //Se imprimen los post
 getPosts((post)=> {
-  const PostCard = document.createElement("textarea");
+  const PostCard = document.createElement("p");
   PostCard.setAttribute("class","Postcard");
   PostCard.innerHTML = post.content;
 
   const likeButton = document.createElement("button");
   likeButton.setAttribute("class", "likeButton");
-  likeButton.textContent = "+";
+  likeButton.textContent = "LIKE";
   
   const spanButton = document.createElement("span");
   spanButton.setAttribute("id", "count");
